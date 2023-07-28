@@ -51,7 +51,7 @@ return function (ContainerConfigurator $configurator, ContainerBuilder $containe
         $services->set('dashboard.widget.ke_search_trending_searchphrases')
             ->class(ListWidget::class)
             ->arg('$dataProvider', new Reference(TrendingSearchphrasesDataProvider::class))
-            ->arg('$view', new Reference('dashboard.views.widget'))
+            ->arg('$backendViewFactory', new Reference(\TYPO3\CMS\Backend\View\BackendViewFactory::class))
             ->tag(
                 'dashboard.widget',
                 [
